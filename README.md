@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-  <a href="https://github.com/yourusername/wyre">
+  <a href="https://github.com/13siddhu/Wyre">
     <img src="./public/wyre-logo.png" alt="Wyre Logo" width="300">
   </a>
   <br />
@@ -97,14 +97,6 @@ Follow these steps to deploy the Wyre ecosystem on your local machine.
 
 ---
 
-## 📸 Screen Capture
-
-*(Add a screenshot of your homepage here to show off the design)*
-
-`![Wyre Dashboard](./public/screenshot-demo.png)`
-
----
-
 ## 🤝 Contribution
 
 We welcome fellow developers to wire into the mainframe.
@@ -115,14 +107,3 @@ We welcome fellow developers to wire into the mainframe.
 5.  Open a Pull Request
 
 ---
-
-## 📜 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-<div align="center">
-  <p>Built with 💻 and ☕ by <b>[Your Name]</b></p>
-  <p><i>"The Future is Wired."</i></p>
-</div>
