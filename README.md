@@ -65,7 +65,7 @@ Follow these steps to deploy the Wyre ecosystem on your local machine.
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/yourusername/wyre.git](https://github.com/yourusername/wyre.git)
+    git clone [https://github.com/yourusername/wyre.git](https://github.com/13siddhu/Wyre.git)
     cd wyre
     ```
 
