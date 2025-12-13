@@ -84,7 +84,7 @@ export async function POST(request) {
 }
 
 //check is user have already registered a store if yes then send status of the store
-async function GET(request) {
+export async function GET(request) {
     try {
         const { userId } = getAuth(request);
 
