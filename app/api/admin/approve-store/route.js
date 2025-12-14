@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
 //approve seller
 export async function POST(request) {
     try {
-        const userId = getAuth(request)
+        const {userId} = getAuth(request)
         const isAdmin = await authAdmin(userId);
 
         if(!isAdmin){
