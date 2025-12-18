@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma';
+import prisma  from '@/lib/prisma';
 
 const authSeller = async(userID) => {
     try {
@@ -7,7 +7,7 @@ const authSeller = async(userID) => {
             include : { store : true }
         });
 
-        if(!user.store){
+        if(user.store){
             if(user.store.status === 'approved'){
                 return user.store.id;
             }
