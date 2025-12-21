@@ -24,7 +24,7 @@ export async function POST(request) {
 //get all addresses for user
 export async function GET(request){
     try {
-        const {userId} = useAuth(request);
+        const {userId} = getAuth(request);
 
         const addresses = await prisma.address.findMany({
             where : {userId}
