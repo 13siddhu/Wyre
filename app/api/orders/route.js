@@ -110,7 +110,7 @@ export async function POST(request){
                     price_data : {
                         currency: 'INR',
                         product_data: {
-                            name: 'Orders'
+                            name: 'Order'
                         },
                         unit_amount : Math.round(fullAmount * 100)
                     },
