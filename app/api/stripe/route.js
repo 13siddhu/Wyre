@@ -49,7 +49,7 @@ export async function  POST(request) {
 
 
         switch (event.type) {
-            case 'payment-intent.succeeded': {
+            case 'payment_intent.succeeded': {
                 await handlePaymentIntent(event.data.object.id,true);
                 break
             }
