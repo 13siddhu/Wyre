@@ -16,7 +16,7 @@ export async function  POST(request) {
                 payment_intent:paymentIntentId
             })
 
-            const {orderId,userId,appId} = session.data[0].metadata;
+            const {orderIds,userId,appId} = session.data[0].metadata;
             
             if(appId !== 'Wyre'){
                 return NextResponse.json({received: true,message: 'Invalid App ID'});
@@ -35,9 +35,9 @@ export async function  POST(request) {
                 //delete the cart data from the user after payment confirmation
                 await prisma.user.update({
                     where: { id: userId },
-                    data: { cart: {}}   
+                    data: { cart: {}}
                 })
-            }else{
+            }else{ 
                 //delete order data from the database
                 await Promise.all(orderIdsArray.map(async (orderId) => {
                     await prisma.order.delete({
