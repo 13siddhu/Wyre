@@ -52,6 +52,19 @@ export default function StoreOrders() {
         setIsModalOpen(false)
     }
 
+    const getDisplayName = (order) => {
+        if(!order) return '';
+        const addrName = order.address?.name;
+        const userName = order.user?.name || (order.user?.email ? order.user.email.split('@')[0] : 'Customer');
+        if(!addrName) return userName;
+        // If the stored address name looks like a template/placeholder, prefer user name or clean it
+        if (/{|data\.|user\.|first_name|firstName/.test(addrName)) {
+            const cleaned = addrName.replace(/[{}]/g,'').replace(/\b(null|undefined)\b/g,'').replace(/data\.first_name|user\.first_name|data\.firstName|user\.firstName/g,'').trim();
+            return cleaned || userName;
+        }
+        return addrName;
+    }
+
     useEffect(() => {
         fetchOrders()
     }, [])
@@ -128,7 +141,7 @@ export default function StoreOrders() {
                         {/* Customer Details */}
                         <div className="mb-4">
                             <h3 className="font-semibold mb-2">Customer Details</h3>
-                            <p><span className="text-green-700">Name:</span> {selectedOrder.user?.name}</p>
+                            <p><span className="text-green-700">Name:</span> {getDisplayName(selectedOrder)}</p>
                             <p><span className="text-green-700">Email:</span> {selectedOrder.user?.email}</p>
                             <p><span className="text-green-700">Phone:</span> {selectedOrder.address?.phone}</p>
                             <p><span className="text-green-700">Address:</span> {`${selectedOrder.address?.street}, ${selectedOrder.address?.city}, ${selectedOrder.address?.state}, ${selectedOrder.address?.zip}, ${selectedOrder.address?.country}`}</p>
