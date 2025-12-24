@@ -13,7 +13,6 @@ export async function POST(request) {
         if(!storeId){
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
-
         //get the data from the form
         const formData = await request.formData();
         const name = formData.get("name");
