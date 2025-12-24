@@ -40,10 +40,9 @@ const Footer = () => {
     ];
 
     const socialIcons = [
-        { icon: FacebookIcon, link: "https://www.facebook.com" },
-        { icon: InstagramIcon, link: "https://www.instagram.com" },
-        { icon: TwitterIcon, link: "https://twitter.com" },
-        { icon: LinkedinIcon, link: "https://www.linkedin.com" },
+        { icon: InstagramIcon, link: "https://www.instagram.com/_siddhartha__singh_/" },
+        { icon: TwitterIcon, link: "https://x.com/13siddhu" },
+        { icon: LinkedinIcon, link: "https://www.linkedin.com/in/siddhartha-singh-a46080286/" },
     ]
 
     return (
