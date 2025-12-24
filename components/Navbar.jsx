@@ -70,29 +70,39 @@ const Navbar = () => {
 
                     </div>
 
-                    {/* Mobile User Button  */}
-                    <div className="sm:hidden">
+                    {/* Mobile User Button / Cart Section */}
+                    <div className="sm:hidden flex items-center gap-5">
+                        
+                        {/* 1. The Cart Icon (Visible when logged in, or move outside 'user &&' to show always) */}
+                        {user && (
+                            <Link href="/cart" className="relative text-slate-600">
+                                <ShoppingCart size={22} />
+                                {/* Cart Badge */}
+                                <span className="absolute -top-2 -right-2 text-[10px] text-white bg-slate-600 h-4 w-4 flex items-center justify-center rounded-full">
+                                    {cartCount}
+                                </span>
+                            </Link>
+                        )}
+
+                        {/* 2. The User Button (Only shows My Orders now) */}
                         { user ? (
-                                <div>
-                                    <UserButton>
-                                        <UserButton.MenuItems>
-                                            <UserButton.Action labelIcon = { <ShoppingCart size={16}/>} label="Cart"  onClick={()=> router.push('/cart')}/>
-                                        </UserButton.MenuItems>
-                                    </UserButton>
-                                    <UserButton>
-                                        <UserButton.MenuItems>
-                                            <UserButton.Action labelIcon = { <PackageIcon size={16}/>} label="My Orders"  onClick={()=> router.push('/orders')}/>
-                                        </UserButton.MenuItems>
-                                    </UserButton>
-                                </div>
+                                <UserButton>
+                                    <UserButton.MenuItems>
+                                        <UserButton.Action 
+                                            labelIcon={<PackageIcon size={16}/>} 
+                                            label="My Orders"  
+                                            onClick={()=> router.push('/orders')}
+                                        />
+                                    </UserButton.MenuItems>
+                                </UserButton>
                             ) : (
                                <button onClick={openSignIn} className="px-7 py-1.5 bg-indigo-500 hover:bg-indigo-600 text-sm transition text-white rounded-full">
                                    Login
                                </button>
                             ) 
                         }
-
                     </div>
+                    
                 </div>
             </div>
             <hr className="border-gray-300" />
